@@ -42,4 +42,7 @@ foreach (APPLICATION_NAME ${LIST_APPLICATION})
             COMMAND ${OBJCOPY} -Oihex $<TARGET_FILE:${ELF_FILE}> ${OUTPUT_DIR}/${HEX_FILE}
             COMMAND ${OBJCOPY} -Obinary $<TARGET_FILE:${ELF_FILE}> ${OUTPUT_DIR}/${BIN_FILE}
             COMMENT "Building ${OUTPUT_DIR}/${HEX_FILE} \nBuilding ${OUTPUT_DIR}/${BIN_FILE}")
+
+	add_custom_target(flash-${APPLICATION_NAME} st-flash write ${BIN_FILE} 0x8000000 WORKING_DIRECTORY ${OUTPUT_DIR})
+	#target_link_libraries(flash-${APPLICATION_NAME} ${ELF_FILE})
 endforeach ()
