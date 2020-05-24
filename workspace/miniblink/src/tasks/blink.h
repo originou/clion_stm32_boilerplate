@@ -1,3 +1,4 @@
+#include <limits.h>
 //
 // Created by originou on 24/05/2020.
 //
@@ -7,4 +8,4 @@
 
 #endif //STM32_DMA_WORKSPACE_BLINK_H
 
-void blink_led(void *args __attribute((unused)));
+_Noreturn void blink_led(void *args __attribute((unused)));

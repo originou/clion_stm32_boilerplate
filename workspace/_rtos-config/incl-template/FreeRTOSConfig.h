@@ -28,6 +28,7 @@
 #ifndef FREERTOS_CONFIG_H
 #define FREERTOS_CONFIG_H
 
+#include "system_stm32xx.h"
 /*-----------------------------------------------------------
  * Application specific definitions.
  *
@@ -44,12 +45,8 @@
 #define configUSE_IDLE_HOOK            0
 #define configUSE_TICK_HOOK            0
 
-#if defined(STM32_CONFIG_CLOCK_HZ)
-#   define configCPU_CLOCK_HZ        ( ( unsigned long ) STM32_CONFIG_CLOCK_HZ )
-#else
-#   define configCPU_CLOCK_HZ        ( ( unsigned long ) 72000000 )
-#   endif
-
+#define configCPU_CLOCK_HZ        ( ( unsigned long ) __SYSTEM_CLOCK_HZ__ )
+#define configSYSTICK_CLOCK_HZ      (configCPU_CLOCK_HZ / 8)
 #define configTICK_RATE_HZ            ( ( TickType_t ) 1000 )
 #define configMAX_PRIORITIES        ( 5 )
 #define configMINIMAL_STACK_SIZE    ( ( unsigned short ) 128 )

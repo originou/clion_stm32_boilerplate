@@ -1,0 +1,15 @@
+//
+// Created by originou on 24/05/2020.
+//
+
+#ifndef STM32_DMA_WORKSPACE_SYSTEM_STM32XX_H
+#define STM32_DMA_WORKSPACE_SYSTEM_STM32XX_H
+
+
+#if defined(STM32F1)
+#define __SYSTEM_CLOCK_HZ__ 72000000
+#elif defined(STM32F4)
+#define __SYSTEM_CLOCK_HZ__ 168000000
+#endif
+
+#endif //STM32_DMA_WORKSPACE_SYSTEM_STM32XX_H

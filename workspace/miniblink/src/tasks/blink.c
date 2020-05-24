@@ -10,9 +10,13 @@
 #include <libopencm3/stm32/gpio.h>
 
 
-void blink_led(void *args __attribute((unused))) {
+_Noreturn void blink_led(void *args __attribute((unused))) {
     for (;;) {
+#if defined(STM32F1)
         gpio_toggle(GPIOC, GPIO13);
-        vTaskDelay(pdMS_TO_TICKS(200));
+#else
+        gpio_toggle(GPIOA, GPIO6);
+#endif
+        vTaskDelay(pdMS_TO_TICKS(500));
     }
 }
