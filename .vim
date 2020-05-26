@@ -1,1 +1,1 @@
-set path+=${PWD}/rtos/FreeRTOS/Sources,${PWD}/libopencm3/include,${PWD}/libopencm3/lib
+set path+=${PWD}/rtos/FreeRTOS/Source/include,${PWD}/rtos/FreeRTOS/Source,${PWD}/libopencm3/include,${PWD}/libopencm3/lib

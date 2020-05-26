@@ -12,9 +12,10 @@ set(FREERTOS_LIB_SRC
         ${FREERTOS_DIR}/portable/MemMang/heap_4.c
         ${FREERTOS_DIR}/list.c
         ${FREERTOS_DIR}/tasks.c
+        ${FREERTOS_DIR}/queue.c
         )
 
-set(SOURCES src/main.cpp)
+set(SOURCES src/main.c)
 
 
 set(FREERTOS_INC_DIR ${FREERTOS_INC_DIR} PARENT_SCOPE)
