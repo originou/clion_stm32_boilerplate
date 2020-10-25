@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 3.12)
 set(CONFIG_DIR ${CMAKE_CURRENT_SOURCE_DIR}/_rtos-config)
 #include(_rtos-config/config.cmake)
 
-set(LIST_APPLICATION miniblink uart)
+set(LIST_APPLICATION miniblink uart usbcdcdemo)
 
 message("-----------Workspace Information------------")
 message(STATUS "List of application: ${LIST_APPLICATION}")
